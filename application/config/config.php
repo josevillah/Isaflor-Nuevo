@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-if ($_SERVER['HTTP_HOST'] !== 'localhost') {
+if ($_SERVER['HTTP_HOST'] == 'localhost') {
     $config['base_url'] = 'http://localhost/proyectos/isaflor.cl/';
 }else{
     $config['base_url'] = 'https://isaflor.cl/';

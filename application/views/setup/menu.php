@@ -1,11 +1,11 @@
 <!-- Panel superior -->
 <header class="w-[100%] max-w-[1550px] bg-[#FAFAFA] flex flex-col fixed top-0 left-0 z-20">
-    <div class="w-[100%] py-2 md:py-[10px] shadow-md flex flex-col justify-center items-center gap-5">
-        <section class="w-[100%] flex flex-row overflow-hidden">
+    <div class="w-[100%] py-4 md:py-[10px] shadow-md flex flex-col justify-center items-center gap-2">
+        <section class="w-[100%] hidden md:flex flex-row overflow-hidden">
             <!-- Logo empresa -->
             <a href="<?php echo base_url(); ?>" class="w-[70%] md:w-[20%]">
-                <div class="w-[100%] md:w-[100%] md:h-[100%] flex object-cover justify-center items-center">
-                    <img class="w-[120px] md:w-[150px]" src="<?php echo base_url('/public/img/setup/Logo-naranja.png'); ?>">
+                <div class="w-[70%] md:w-[100%] md:h-[100%] flex object-cover justify-center items-center">
+                    <img class="w-[100px] md:w-[150px]" src="<?php echo base_url('/public/img/setup/Logo-naranja.png'); ?>">
                 </div>
             </a>
             <!-- Formulario con barra de búsqueda -->
@@ -45,9 +45,21 @@
                     </li> -->
                 </ul>
             </nav>
-        
+        </section>
+        <div class="w-full flex md:hidden">
+            <!-- Barra de búsqueda del dispositivo móvil -->
+            <nav class="w-[80%] md:hidden">
+                <form action="#" class="w-[100%] h-[100%] flex justify-center items-center">
+                    <div class="w-[90%] h-[100%] flex flex-row justify-center items-center">
+                        <div class="relative w-[100%]">
+                            <input class="searchInputMovil w-[100%] rounded-sm outline-0 px-5 py-2 text-gray-600 border-[3px] border-solid border-orange-300 focus:border-orange-500 transicionColor" type="text" name="search" placeholder="Buscar...">
+                            <svg class="absolute top-[7px] md:top-[8px] right-[10px] text-gray-600" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                        </div>
+                    </div>
+                </form>
+            </nav>
             <!-- Botón Movil -->
-            <section class="w-[30%] md:hidden flex justify-center items-center">
+            <section class="w-[20%] md:hidden flex justify-center items-center">
                 <button class="text-orange-300" id="btnOpenMenu">
                     <svg width="50" height="50" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
                 </button>
@@ -55,21 +67,10 @@
                     <svg width="60" height="60" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10l4 4m0 -4l-4 4" /><path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" /></svg>
                 </button>
             </section>
-        </section>
-        <!-- Barra de búsqueda del dispositivo móvil -->
-        <nav class="w-[100%] md:hidden">
-            <form action="#" class="w-[100%] h-[100%] flex justify-center items-center">
-                <div class="w-[80%] h-[100%] flex flex-row justify-center items-center">
-                    <div class="relative w-[100%] py-2">
-                        <input class="searchInputMovil w-[100%] rounded-sm outline-0 px-5 py-2 text-gray-600 border-[3px] border-solid border-orange-300 focus:border-orange-500 transicionColor" type="text" name="search" placeholder="Buscar...">
-                        <svg class="absolute top-[15px] md:top-[8px] right-[10px] text-gray-600" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-                    </div>
-                </div>
-            </form>
-        </nav>
+        </div>
 
         <!-- Buscador móvil -->
-        <nav class="searchBodyMovil hidden w-full max-h-[600px] max-w-[800px] px-3 py-3 rounded-md bg-white fixed top-[146px] z-20 overflow-x-hidden"></nav>
+        <nav class="searchBodyMovil hidden w-full max-h-[600px] max-w-[800px] px-3 py-3 rounded-md bg-white fixed top-[81px] z-20 overflow-x-hidden"></nav>
     </div>
 </header>
 
@@ -172,20 +173,20 @@
     <ul class="w-[100%] text-md font-bold text-gray-500 py-3 px-3 overflow-y-scroll">
         <li class="w-[100%] flex flex-col">
             <!-- Botón del dropdown -->
-            <a href="<?php echo base_url(""); ?>" class="w-[100%] h-[100%] py-[20px] px-5 text-2xl hover:bg-gray-100 hover:text-gray-900 border-l-[7px] border-solid border-white hover:border-orange-500 flex gap-2 items-center relative">
-            <svg width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+            <a href="<?php echo base_url(""); ?>" class="w-[100%] h-[100%] py-[20px] px-5 text-md hover:bg-gray-100 hover:text-gray-900 border-l-[7px] border-solid border-white hover:border-orange-500 flex gap-2 items-center relative">
+            <svg width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
                 Inicio
             </a>
-            <a href="#" class="w-[100%] h-[100%] py-[20px] px-5 text-2xl hover:bg-gray-100 hover:text-gray-900 border-l-[7px] border-solid border-white hover:border-orange-500 flex gap-2 items-center relative">
-                <svg width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21h18" /><path d="M19 21v-4" /><path d="M19 17a2 2 0 0 0 2 -2v-2a2 2 0 1 0 -4 0v2a2 2 0 0 0 2 2z" /><path d="M14 21v-14a3 3 0 0 0 -3 -3h-4a3 3 0 0 0 -3 3v14" /><path d="M9 17v4" /><path d="M8 13h2" /><path d="M8 9h2" /></svg>
+            <a href="#" class="w-[100%] h-[100%] py-[20px] px-5 text-md hover:bg-gray-100 hover:text-gray-900 border-l-[7px] border-solid border-white hover:border-orange-500 flex gap-2 items-center relative">
+                <svg width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21h18" /><path d="M19 21v-4" /><path d="M19 17a2 2 0 0 0 2 -2v-2a2 2 0 1 0 -4 0v2a2 2 0 0 0 2 2z" /><path d="M14 21v-14a3 3 0 0 0 -3 -3h-4a3 3 0 0 0 -3 3v14" /><path d="M9 17v4" /><path d="M8 13h2" /><path d="M8 9h2" /></svg>
                 Nosotros
             </a>
-            <button class="btnMovilOpenCategories w-[100%] h-[100%] py-[20px] px-5 text-2xl hover:bg-gray-100 hover:text-gray-900 border-l-[7px] border-solid border-white hover:border-orange-500 flex gap-2 items-center relative">
-                <svg width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4h6v6h-6z" /><path d="M14 4h6v6h-6z" /><path d="M4 14h6v6h-6z" /><path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /></svg>
+            <button class="btnMovilOpenCategories w-[100%] h-[100%] py-[20px] px-5 text-md hover:bg-gray-100 hover:text-gray-900 border-l-[7px] border-solid border-white hover:border-orange-500 flex gap-2 items-center relative">
+                <svg width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4h6v6h-6z" /><path d="M14 4h6v6h-6z" /><path d="M4 14h6v6h-6z" /><path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /></svg>
                 Categorías
             </button>
-            <!-- <button class="btnMovilOpenCart w-[100%] h-[100%] py-[20px] px-5 text-2xl hover:bg-gray-100 hover:text-gray-900 border-l-[7px] border-solid border-white hover:border-orange-500 flex gap-2 items-center relative">
-                <svg width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 17h-11v-14h-2" /><path d="M6 5l14 1l-1 7h-13" /></svg>
+            <!-- <button class="btnMovilOpenCart w-[100%] h-[100%] py-[20px] px-5 text-md hover:bg-gray-100 hover:text-gray-900 border-l-[7px] border-solid border-white hover:border-orange-500 flex gap-2 items-center relative">
+                <svg width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 17h-11v-14h-2" /><path d="M6 5l14 1l-1 7h-13" /></svg>
                 Carrito
             </button> -->
             <!-- Contenido del dropdown -->
@@ -194,6 +195,6 @@
     </ul>
 </navbar>
 
-<div class="closeSearchMovil hidden w-[40px] h-[40px] rounded-md bg-white flex justify-center items-center absolute top-[780px] left-[45%] z-40">
+<div class="closeSearchMovil hidden w-[40px] h-[40px] rounded-md bg-white flex justify-center items-center absolute top-[710px] left-[45%] z-40">
     <svg width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
 </div>

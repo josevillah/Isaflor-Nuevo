@@ -1,7 +1,7 @@
 <!-- Ficha del producto -->
 <article class="w-[100%] flex flex-col justify-center items-center">
-    <section class="w-[70%] md:w-[95%] h-full bg-white flex flex-col md:flex-row items-center md:items-start">
-        <div class="w-[70%] md:w-1/2 md:h-[550px] py-3 px-3 flex">
+    <section class="w-[90%] md:w-[95%] h-full bg-white flex flex-col md:flex-row items-center md:items-start">
+        <div class="w-full md:w-1/2 md:h-[550px] py-3 px-3 flex">
             <img class="w-full object-contain" src="<?php echo base_url($producto['urlimagen']); ?>" alt="<?php echo $producto['nompro']; ?>" class="w-[100%] h-[100%] object-cover">
         </div>
         <div class="w-[100%] md:w-1/2 py-3 px-3 flex flex-col">
@@ -30,13 +30,13 @@
                 <h4 class="text-lg font-bold flex items-center gap-2">SKU: <p class="font-normal text-gray-700"><?php echo $producto['codpro']; ?></p></h4>
             </div>
             <?php if($producto['preoferpro'] > 0): ?>
-                <div class="w-[90%] mt-3 flex items-center gap-5">
-                    <h4 class="text-3xl text-orange-400 line-through"><?php echo '$' . number_format($producto['prepro'], 0, ',', '.'); ?></h4>
-                    <h4 class="text-3xl font-bold text-orange-500"><?php echo '$' . number_format($producto['preoferpro'], 0, ',', '.'); ?></h4>
+                <div class="w-[90%] mt-3 flex justify-between md:justify-start items-center gap-5">
+                    <h4 class="text-lg md:text-2xl text-orange-400 line-through"><?php echo '$' . number_format($producto['prepro'], 0, ',', '.'); ?></h4>
+                    <h4 class="text-lg md:text-2xl font-bold text-orange-500"><?php echo '$' . number_format($producto['preoferpro'], 0, ',', '.'); ?></h4>
                 </div>
             <?php else: ?>
                 <div class="w-[90%] mt-3 flex items-center">
-                    <h4 class="text-3xl font-bold text-orange-500"><?php echo '$' . number_format($producto['prepro'], 0, ',', '.'); ?></h4>
+                    <h4 class="text-lg md:text-2xl font-bold text-orange-500"><?php echo '$' . number_format($producto['prepro'], 0, ',', '.'); ?></h4>
                 </div>
             <?php endif; ?>
             <div class="w-[90%] mt-3 flex items-center">
@@ -64,9 +64,9 @@
                 <svg width="24" height="24" viewBox="0 0 24 22" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
             </a>
         </section>
-        <section class="w-[90%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
+        <section class="w-[100%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
             <?php foreach($relacionados as $relacion): ?>
-                <div class="w-[80%] md:w-[240px] px-2 py-2 bg-white rounded-md flex flex-col justify-center items-center">
+                <div class="w-full md:w-[240px] px-2 py-2 bg-white rounded-md flex flex-col justify-center items-center">
                     <!-- Etiquetas nuevo, relacionados y agotado -->
                     <div class="w-full flex flex-row items-center flex-wrap gap-2">
                         <?php if(strtotime($relacion['fecharegistro']) > strtotime('-2 months')): ?>
@@ -87,7 +87,7 @@
                         <?php endif; ?>
                     </div>
                     <!-- Cuerpo de la imagen -->
-                    <section class="md:w-[200px] h-[50%] mt-2 flex flex-col justify-center items-center">
+                    <section class="w-full md:w-[200px] h-[50%] mt-2 flex flex-col justify-center items-center">
                         <a href="<?php echo base_url("index.php/productos/viewProduct/".$relacion['id']); ?>" class="w-full h-full flex justify-center overflow-hidden productosHover">
                             <img class="object-cover" src="<?php echo base_url($relacion['urlimagen']); ?>">
                         </a>

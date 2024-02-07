@@ -3,9 +3,9 @@
     <section class="w-[100%] md:w-[90%] px-5 flex justify-between items-center">
         <h3 class="text-lg md:text-2xl font-bold text-gray-800"><?php echo $productos[0]['nombre']; ?></h3>
     </section>
-    <section class="w-[90%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-start flex-wrap gap-7">
+    <section class="w-[100%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-start flex-wrap gap-7">
         <?php foreach($productos as $item1): ?>
-            <div class="md:w-[240px] px-2 bg-white rounded-md flex flex-col justify-center items-center">
+            <div class="w-full md:w-[240px] px-2 bg-white rounded-md flex flex-col justify-center items-center">
                 <!-- Etiquetas nuevo, oferta y agotado -->
                 <div class="w-full py-3 min-h-[45px] flex flex-row items-center flex-wrap gap-2">
                     <?php if(strtotime($item1['fecharegistro']) > strtotime('-2 months')): ?>
@@ -75,39 +75,40 @@
     </section>
 </article>
 
+<?php $page = intval($_GET['page']); ?>
+
 <!-- Pagination -->
 <article class="w-full mt-5 flex justify-center items-center">
     <section class="w-full flex justify-center items-center">
         <ul class="paginacion flex flex-wrap">
             <!-- Anterior -->
-            <?php if($_GET['page'] <= 1): ?>
+            <?php if(isset($page) && is_numeric($page) && intval($page) <= 1): ?>
                 <li class="pageItem flex justify-center items-center">
                     <a class="w-full h-full py-3 px-5 text-white font-bold bg-gray-400 cursor-default">Anterior</a>
                 </li>
-            <?php else: ?>
+            <?php elseif(isset($page) && is_numeric($page)): ?>
                 <li class="pageItem flex justify-center items-center">
-                    <a href="<?php echo "?page=".$_GET['page']-1; ?>" class="w-full h-full py-3 px-5 text-white font-bold bg-gray-800 hover:bg-orange-500 cursor-pointer">Anterior</a>
+                    <a href="<?php echo "?page=".($page - 1); ?>" class="w-full h-full py-3 px-5 text-white font-bold bg-gray-800 hover:bg-orange-500 cursor-pointer">Anterior</a>
                 </li>
             <?php endif; ?>
 
             <!-- Numero de pagina -->
             <?php for($i=0; $i<$numero_paginas; $i++): ?>
                 <li class="pageItem hidden md:flex justify-center items-center">
-                    <a href="?page=<?php echo $i+1;  ?>" class="w-full h-full py-3 px-5 text-white font-bold <?php echo $_GET['page'] == $i+1 ? 'bg-orange-400' : 'bg-gray-800' ?> hover:bg-orange-500 cursor-pointer"><?php echo $i+1; ?></a>
+                    <a href="?page=<?php echo $i+1;  ?>" class="w-full h-full py-3 px-5 text-white font-bold <?php echo intval($page) == $i+1 ? 'bg-orange-400' : 'bg-gray-800' ?> hover:bg-orange-500 cursor-pointer"><?php echo $i+1; ?></a>
                 </li>
             <?php endfor; ?>
             
             <!-- Siguiente -->
-            <?php if($_GET['page'] < $numero_paginas): ?>
+            <?php if(isset($page) && is_numeric($page) && intval($page) < $numero_paginas): ?>
                 <li class="pageItem flex justify-center items-center">
-                    <a href="<?php echo "?page=".$_GET['page']+1; ?>" class="w-full h-full py-3 px-5 text-white font-bold bg-gray-800 hover:bg-orange-500 cursor-pointer">Siguiente</a>
+                    <a href="<?php echo "?page=".($page + 1); ?>" class="w-full h-full py-3 px-5 text-white font-bold bg-gray-800 hover:bg-orange-500 cursor-pointer">Siguiente</a>
                 </li>
-            <?php else: ?>
+            <?php elseif(isset($page) && is_numeric($page)): ?>
                 <li class="pageItem flex justify-center items-center">
                     <a class="w-full h-full py-3 px-5 text-white font-bold bg-gray-400 cursor-default">Siguiente</a>
                 </li>
             <?php endif; ?>
-            
         </ul>
     </section>
 </article>

@@ -34,7 +34,7 @@
             <svg width="24" height="24" viewBox="0 0 24 22" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
         </a>
     </section>
-    <section class="w-[90%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
+    <section class="w-[100%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
         <?php foreach($ofertas as $oferta): ?>
             <div class="md:w-[240px] px-2 py-2 bg-white rounded-md flex flex-col justify-center items-center">
                 <!-- Etiquetas nuevo, oferta y agotado -->
@@ -112,7 +112,7 @@
             <svg width="24" height="24" viewBox="0 0 24 22" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
         </a>
     </section>
-    <section class="w-[90%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
+    <section class="w-[100%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
         <?php foreach($aleatoriosUno as $item1): ?>
             <div class="md:w-[240px] px-2 bg-white rounded-md flex flex-col justify-center items-center">
                 <!-- Etiquetas nuevo, oferta y agotado -->
@@ -177,19 +177,19 @@
 
 <!-- Marcas -->
 <article class="w-full mt-[100px] px-5 flex flex-row justify-center items-center">
-    <section class="w-[90%] px-2 bg-white rounded-md flex items-center overflow-hidden">
+    <section class="w-[100%] px-2 bg-white rounded-md flex items-center overflow-hidden">
         <div class="cuerpoMarca flex gap-3 py-5 items-center justify-center animatesm animate-marquee">
             <a  target="_blank" href="https://www.amesti.cl/" class="w-[300px] md:w-[164px] xl:w-[255px] max-h-[65px] flex">
-                <img class="object-cover" src="<?php echo base_url("public/img/marcas/amesti.PNG"); ?>">
+                <img class="object-cover" src="<?php echo base_url("public/img/marcas/amesti.png"); ?>">
             </a>
             <a target="_blank"  href="https://www.oster.cl/" class="w-[300px] md:w-[164px] xl:w-[255px] max-h-[65px] flex">
-                <img class="object-cover" src="<?php echo base_url("public/img/marcas/oster.PNG"); ?>">
+                <img class="object-cover" src="<?php echo base_url("public/img/marcas/oster.png"); ?>">
             </a>
             <a target="_blank"  href="https://www.doral.cl/" class="w-[300px] md:w-[164px] xl:w-[255px] max-h-[65px] flex">
-                <img class="object-cover" src="<?php echo base_url("public/img/marcas/doral.PNG"); ?>">
+                <img class="object-cover" src="<?php echo base_url("public/img/marcas/doral.png"); ?>">
             </a>
             <a target="_blank"  href="https://eglo.cl/" class="w-[300px] md:w-[164px] xl:w-[255px] max-h-[65px] flex">
-                <img class="object-cover" src="<?php echo base_url("public/img/marcas/eglo.PNG"); ?>">
+                <img class="object-cover" src="<?php echo base_url("public/img/marcas/eglo.png"); ?>">
             </a>
             <a target="_blank"  href="https://tiendamsa.cl/" class="w-[300px] md:w-[164px] xl:w-[255px] max-h-[65px] flex">
                 <img class="" src="<?php echo base_url("public/img/marcas/msa.png"); ?>">
@@ -227,7 +227,7 @@
             <svg width="24" height="24" viewBox="0 0 24 22" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
         </a>
     </section>
-    <section class="w-[90%] max-w-[1400px] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
+    <section class="w-[100%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
         <?php foreach($aleatoriosDos as $item2): ?>
             <div class="md:w-[240px] px-2 py-2 bg-white rounded-md flex flex-col justify-center items-center">
                 <!-- Etiquetas nuevo, oferta y agotado -->
