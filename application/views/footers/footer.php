@@ -1,4 +1,4 @@
-<footer class="w-full max-w-[1550px] bg-gray-800 flex flex-col items-center absolute bottom-0">
+<footer class="w-full bg-gray-800 flex flex-col items-center absolute bottom-0">
     <!-- Sucursales -->
     <section class="w-full py-3 text-white flex flex-col md:flex-row items-center">
         <div class="w-full md:w-[33.33%] flex justify-center items-center">
@@ -71,10 +71,10 @@
             </div>
             <!-- Links -->
             <div class="w-1/2 h-full text-center md:text-left">
-                <h4 class="font-bold text-xl">Contacto</h4>
+                <h4 class="font-bold text-xl">Horario</h4>
                 <ul class="w-full text-lg flex flex-col gap-2 mt-5">
-                    <li class="hover:text-orange-300"><a href="tel:+56632212094">Llamar</a></li>
-                    <li class="hover:text-orange-300"><a href="mailto:isaflor@isaflor.cl">Email</a></li>
+                    <li>9:50 am - 19:00 pm Lunes - Viernes</li>
+                    <li>10:00 am - 14:10 pm Sábados</li>
                 </ul>
             </div>
         </div>

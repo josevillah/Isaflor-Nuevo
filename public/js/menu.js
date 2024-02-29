@@ -26,7 +26,7 @@ const btnCloseCart = document.querySelector('.btnCloseCart');
 const btnMovilOpenCart = document.querySelector('.btnMovilOpenCart');
 
 
-let listElements = document.querySelectorAll('.listElements');
+// let listElements = document.querySelector('.listElements');
 
 // variables del buscador
 const searchInput = document.querySelector('.searchInput');
@@ -199,47 +199,84 @@ if(btnOpenMenu){
     btnMovilCloseMenu.addEventListener('click', closeMenuMovil);
     
     // Funcionalidad de las subcategorias
-    listElements.forEach(listElement => {
-        listElement.addEventListener('click', async (e) =>{
-            // Obtener el valor del data-id
-            let id = e.target.dataset.id;
-            // Obtener los datos de la subcategories
-            let datos = await getSubCategories(id);
-            if(datos.length > 0){
-                listElement.classList.toggle('arrow');
+    // listElements.forEach(listElement => {
+    //     listElement.addEventListener('click', async (e) =>{
+    //         // Obtener el valor del data-id
+    //         let id = e.target.dataset.id;
+    //         // Obtener los datos de la subcategories
+    //         let datos = await getSubCategories(id);
+    //         if(datos.length > 0){
+    //             listElement.classList.toggle('arrow');
     
-                let subMenu = listElement.nextElementSibling;
+    //             let subMenu = listElement.nextElementSibling;
                 
-                // Eliminar los elementos del subMenu
-                subMenu.innerHTML = '';
-                // Recorrer los datos para crear los elementos
-                datos.forEach(dato => {
-                    // Crear el elemento li
-                    let li = document.createElement('li');
-                    // Asigno las clases al li
-                    li.classList.add('w-[100%]', 'flex');
-                    // Crear el elemento a
-                    let a = document.createElement('a');
-                    // Asigno las clases y propiedades al a
-                    a.classList.add('w-[100%]', 'h-[100%]', 'px-10', 'py-5', 'hover:bg-gray-100', 'hover:text-orange-500');
-                    a.dataset.id = dato.id;
-                    a.innerText = dato.nombre;
-                    a.href = `${url}/index.php/categorias/viewCategoria/${dato.id}?page=1`;
-                    // Agrego el a al li
-                    li.appendChild(a);
-                    // Agrego el li al ul
-                    subMenu.appendChild(li);
-                });
+    //             // Eliminar los elementos del subMenu
+    //             subMenu.innerHTML = '';
+    //             // Recorrer los datos para crear los elementos
+    //             datos.forEach(dato => {
+    //                 // Crear el elemento li
+    //                 let li = document.createElement('li');
+    //                 // Asigno las clases al li
+    //                 li.classList.add('w-[100%]', 'flex');
+    //                 // Crear el elemento a
+    //                 let a = document.createElement('a');
+    //                 // Asigno las clases y propiedades al a
+    //                 a.classList.add('w-[100%]', 'h-[100%]', 'px-10', 'py-5', 'hover:bg-gray-100', 'hover:text-orange-500');
+    //                 a.dataset.id = dato.id;
+    //                 a.innerText = dato.nombre;
+    //                 a.href = `${url}/index.php/categorias/viewCategoria/${dato.id}?page=1`;
+    //                 // Agrego el a al li
+    //                 li.appendChild(a);
+    //                 // Agrego el li al ul
+    //                 subMenu.appendChild(li);
+    //             });
     
-                // Mostrar el subMenu
-                let height = 0;
-                if(subMenu.clientHeight == '0'){
-                    height = subMenu.scrollHeight;
-                }
-                subMenu.style.height = `${height}px`;
-            }
-        });
+    //             // Mostrar el subMenu
+    //             let height = 0;
+    //             if(subMenu.clientHeight == '0'){
+    //                 height = subMenu.scrollHeight;
+    //             }
+    //             subMenu.style.height = `${height}px`;
+    //         }
+    //     });
+    // });
+
+    const listElements = document.querySelector('.menu ul');
+
+    // Escuchar clics en el contenedor padre de las listas
+    listElements.addEventListener('click', async (e) => {
+        const target = e.target.closest('li');
+        if (!target) return;
+    
+        const id = target.querySelector('input').dataset.id;
+        if (!id) return;
+    
+        const datos = await getSubCategories(id);
+        
+        if (datos.length > 0) {
+            target.classList.toggle('arrow');
+            const subMenu = target.querySelector('.dropdown');
+            // Limpiar el submenú antes de agregar nuevos elementos
+            subMenu.innerHTML = '';
+            // Actualizar los elementos del submenú
+            datos.forEach(dato => {
+                const li = document.createElement('li');
+                li.classList.add('w-[100%]', 'flex');
+                const a = document.createElement('a');
+                a.classList.add('w-[100%]', 'h-[100%]', 'px-10', 'py-5', 'hover:bg-gray-100', 'hover:text-orange-500');
+                a.dataset.id = dato.id;
+                a.href = `${url}/index.php/categorias/viewCategoria/${dato.id}?page=1`;
+                a.innerText = dato.nombre; // Agregar el texto del nombre al enlace
+                li.appendChild(a);
+                subMenu.appendChild(li);
+            });
+    
+            // Mostrar u ocultar el submenú
+            subMenu.style.height = subMenu.clientHeight === 0 ? `${subMenu.scrollHeight}px` : '0px';
+        }
     });
+    
+
 
     async function getProductosNombre(datos) {
         try {
@@ -297,6 +334,7 @@ if(btnOpenMenu){
             if (inputElement.value.length == 0) {
                 bodyElement.classList.add('hidden');
                 backMenu.classList.add('hidden');
+                closeSearchMovil.classList.add('hidden');
                 return;
             }
     
@@ -399,4 +437,3 @@ if(btnOpenMenu){
 
     
 }
-

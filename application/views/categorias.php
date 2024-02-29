@@ -1,13 +1,13 @@
 <!-- Categorías destacadas -->
-<article class="w-[100%] mt-[70px] hidden md:flex flex-col justify-center items-center">
-    <section class="w-[90%] px-5 flex justify-center md:justify-between">
+<article class="w-[100%] md:w-[90%] m-auto mt-[70px] hidden md:flex flex-col justify-center items-center">
+    <section class="w-[100%] px-5 flex justify-center md:justify-between">
         <h3 class="text-2xl font-bold text-gray-800">Categorías Destacadas</h3>
     </section>
-    <section class="w-[90%] px-5">
+    <section class="w-[100%] px-5">
         <div class="w-[100%] flex flex-row flex-wrap justify-center md:justify-between gap-[80px]">
             <?php foreach($categoriasDes as $catDes): ?>
                 <a href="<?php echo base_url("index.php/categorias/viewCategoria/".$catDes['id_categoria']).'?page=1'; ?>" class="mt-[100px] md:mt-[50px] flex flex-col justify-center items-center flex-wrap categoriasHover">
-                    <div class="w-[160px] h-[160px] rounded-full bg-white py-2 px-2 cursor-pointer overflow-hidden">
+                    <div class="w-[180px] h-[180px] rounded-full bg-white py-2 px-2 cursor-pointer overflow-hidden">
                         <img class="w-[100%] h-[100%] object-cover" src="<?php echo base_url($catDes['url_imagen_categoria']); ?>">
                     </div>
                     <div class="w-[100%] mt-[10px] flex flex-col text-center">
@@ -21,8 +21,8 @@
 </article>
 
 <!-- Ofertas -->
-<article class="w-[100%] mt-[120px] flex flex-col justify-center items-center">
-    <section class="w-[100%] md:w-[90%] px-5 flex justify-between items-center">
+<article class="w-[100%] md:w-[90%] m-auto mt-[120px] flex flex-col justify-center items-center">
+    <section class="w-[100%] px-5 flex justify-between items-center">
         <h3 class="text-lg md:text-2xl font-bold text-gray-800">Nuestras ofertas</h3>
         <a href="<?php echo base_url("index.php/productos/viewOferts/?page=1"); ?>" class="pl-[10px] py-3 md:px-5 md:py-3 md:pl-[27px] text-sm md:text-md rounded-md bg-orange-100 hover:bg-[#fee8cb] text-orange-500 font-semibold flex justify-center items-center transicionColor">
             <span class="hidden md:inline-block">
@@ -36,7 +36,7 @@
     </section>
     <section class="w-[100%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
         <?php foreach($ofertas as $oferta): ?>
-            <div class="md:w-[240px] px-2 py-2 bg-white rounded-md flex flex-col justify-center items-center">
+            <div class="w-full md:w-[240px] px-2 py-2 bg-white rounded-md flex flex-col justify-center items-center">
                 <!-- Etiquetas nuevo, oferta y agotado -->
                 <div class="w-full flex flex-row items-center flex-wrap gap-2">
                     <?php if(strtotime($oferta['fecharegistro']) > strtotime('-2 months')): ?>
@@ -57,9 +57,9 @@
                     <?php endif; ?>
                 </div>
                 <!-- Cuerpo de la imagen -->
-                <section class="md:w-[200px] h-[50%] mt-2 flex flex-col justify-center items-center">
+                <section class="w-full md:w-[200px] h-[50%] mt-2 flex flex-col justify-center items-center">
                     <a href="<?php echo base_url("index.php/productos/viewProduct/".$oferta['id']); ?>" class="w-full h-full flex justify-center overflow-hidden productosHover">
-                        <img class="object-cover" src="<?php echo base_url($oferta['urlimagen']); ?>">
+                        <img class="w-full object-contain" src="<?php echo base_url($oferta['urlimagen']); ?>">
                     </a>
                 </section>
                 <!-- Cuerpo de la información -->
@@ -99,8 +99,8 @@
 </article>
 
 <!-- Categorías aleatorias 1 -->
-<article class="w-[100%] mt-[120px] flex flex-col justify-center items-center">
-    <section class="w-[100%] md:w-[90%] px-5 flex justify-between items-center">
+<article class="w-[100%] md:w-[90%] m-auto  mt-[120px] flex flex-col justify-center items-center">
+    <section class="w-[100%] px-5 flex justify-between items-center">
         <h3 class="text-lg md:text-2xl font-bold text-gray-800"><?php echo $aleatoriosUno[0]['nombre_categoria']; ?></h3>
         <a href="<?php echo base_url("index.php/categorias/viewCategoria/".$aleatoriosUno[0]['id_categoria']).'?page=1'; ?>" class="pl-[10px] py-3 md:px-5 md:py-3 md:pl-[27px] text-sm md:text-md rounded-md bg-orange-100 hover:bg-[#fee8cb] text-orange-500 font-semibold flex justify-center items-center transicionColor">
             <span class="hidden md:inline-block">
@@ -114,7 +114,7 @@
     </section>
     <section class="w-[100%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
         <?php foreach($aleatoriosUno as $item1): ?>
-            <div class="md:w-[240px] px-2 bg-white rounded-md flex flex-col justify-center items-center">
+            <div class="w-full md:w-[240px] px-2 bg-white rounded-md flex flex-col justify-center items-center">
                 <!-- Etiquetas nuevo, oferta y agotado -->
                 <div class="w-full py-2 h-[45px] flex flex-row items-center flex-wrap gap-2">
                     <?php if(strtotime($item1['fecha']) > strtotime('-2 months')): ?>
@@ -136,7 +136,7 @@
                 </div>
                 <section class="md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <a href="<?php echo base_url("index.php/productos/viewProduct/".$item1['id_producto']); ?>" class="w-full h-full flex justify-center overflow-hidden productosHover">
-                        <img class="object-cover" src="<?php echo base_url($item1['url_imagen_producto']); ?>">
+                        <img class="w-full object-contain" src="<?php echo base_url($item1['url_imagen_producto']); ?>">
                     </a>
                 </section>
                 <section class="w-full h-[50%] flex flex-col justify-center items-center">
@@ -176,7 +176,7 @@
 </article>
 
 <!-- Marcas -->
-<article class="w-full mt-[100px] px-5 flex flex-row justify-center items-center">
+<article class="w-full md:w-[90%] m-auto  mt-[100px] px-5 flex flex-row justify-center items-center">
     <section class="w-[100%] px-2 bg-white rounded-md flex items-center overflow-hidden">
         <div class="cuerpoMarca flex gap-3 py-5 items-center justify-center animatesm animate-marquee">
             <a  target="_blank" href="https://www.amesti.cl/" class="w-[300px] md:w-[164px] xl:w-[255px] max-h-[65px] flex">
@@ -214,8 +214,8 @@
 </article>
 
 <!-- Categorías aleatorias 2 -->
-<article class="w-[100%] mt-[120px] flex flex-col justify-center items-center">
-    <section class="w-[100%] md:w-[90%] px-5 flex justify-between items-center">
+<article class="w-[100%] md:w-[90%] m-auto  mt-[120px] flex flex-col justify-center items-center">
+    <section class="w-[100%] px-5 flex justify-between items-center">
         <h3 class="text-lg md:text-2xl font-bold text-gray-800"><?php echo $aleatoriosDos[0]['nombre_categoria']; ?></h3>
         <a href="<?php echo base_url("index.php/categorias/viewCategoria/".$aleatoriosDos[0]['id_categoria']).'?page=1'; ?>" class="pl-[10px] py-3 md:px-5 md:py-3 md:pl-[27px] text-sm md:text-md rounded-md bg-orange-100 hover:bg-[#fee8cb] text-orange-500 font-semibold flex justify-center items-center transicionColor">
             <span class="hidden md:inline-block">
@@ -229,7 +229,7 @@
     </section>
     <section class="w-[100%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-between flex-wrap gap-5">
         <?php foreach($aleatoriosDos as $item2): ?>
-            <div class="md:w-[240px] px-2 py-2 bg-white rounded-md flex flex-col justify-center items-center">
+            <div class="w-full md:w-[240px] px-2 py-2 bg-white rounded-md flex flex-col justify-center items-center">
                 <!-- Etiquetas nuevo, oferta y agotado -->
                 <div class="w-full py-2 h-[45px] flex flex-row items-center flex-wrap gap-2">
                     <?php if(strtotime($item2['fecha']) > strtotime('-2 months')): ?>
@@ -251,7 +251,7 @@
                 </div>
                 <section class="md:w-[200px] h-[50%] flex flex-col justify-center items-center">
                     <a href="<?php echo base_url("index.php/productos/viewProduct/".$item2['id_producto']); ?>" class="w-full h-full flex justify-center overflow-hidden productosHover">
-                        <img class="object-cover" src="<?php echo base_url($item2['url_imagen_producto']); ?>">
+                        <img class="w-full object-contain" src="<?php echo base_url($item2['url_imagen_producto']); ?>">
                     </a>
                 </section>
                 <section class="w-full h-[50%] flex flex-col justify-center items-center">

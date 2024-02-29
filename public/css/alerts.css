@@ -1,0 +1,19 @@
+.alertsBody{
+    background-color: #1a1a1a7a;
+}
+
+.alert.show{
+    animation: show_slide 1s ease forwards;
+}
+
+@keyframes show_slide {
+    0% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(20%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}

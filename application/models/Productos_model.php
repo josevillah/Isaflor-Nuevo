@@ -159,5 +159,23 @@ class Productos_model extends CI_Model {
             return $result;
         endif;
 	}
+	
+	function getCountCatSubCatPro()
+	{	
+		$query = $this->db->query("
+		SELECT
+		(SELECT COUNT(*) FROM productos) AS cantidad_productos,
+		(SELECT COUNT(*) FROM catpadre) AS cantidad_catpadre,
+		(SELECT COUNT(*) FROM categorias) AS cantidad_categorias,
+		(SELECT COUNT(*) FROM usuario) AS cantidad_usuarios
+		");
+
+        // Verificar si la consulta fue exitosa
+		if($query):
+			// Obtener los resultados como un array
+			$result = $query->result_array();
+            return $result;
+        endif;
+	}
 
 }

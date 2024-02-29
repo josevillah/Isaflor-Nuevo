@@ -3,7 +3,7 @@
     <section class="w-[100%] md:w-[90%] px-5 flex justify-between items-center">
         <h3 class="text-lg md:text-2xl font-bold text-gray-800"><?php echo $productos[0]['nombre']; ?></h3>
     </section>
-    <section class="w-[100%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-start flex-wrap gap-7">
+    <section class="w-[100%] px-5 py-5 mt-[20px] flex flex-row justify-center md:justify-center flex-wrap gap-7">
         <?php foreach($productos as $item1): ?>
             <div class="w-full md:w-[240px] px-2 bg-white rounded-md flex flex-col justify-center items-center">
                 <!-- Etiquetas nuevo, oferta y agotado -->

@@ -1,5 +1,5 @@
 <!-- Panel superior -->
-<header class="w-[100%] max-w-[1550px] bg-[#FAFAFA] flex flex-col fixed top-0 left-0 z-20">
+<header class="w-[100%] bg-[#FAFAFA] flex flex-col fixed top-0 left-0 z-20">
     <div class="w-[100%] py-4 md:py-[10px] shadow-md flex flex-col justify-center items-center gap-2">
         <section class="w-[100%] hidden md:flex flex-row overflow-hidden">
             <!-- Logo empresa -->
@@ -70,7 +70,7 @@
         </div>
 
         <!-- Buscador móvil -->
-        <nav class="searchBodyMovil hidden w-full max-h-[600px] max-w-[800px] px-3 py-3 rounded-md bg-white fixed top-[81px] z-20 overflow-x-hidden"></nav>
+        <nav class="searchBodyMovil hidden w-full max-h-[300px] max-w-[800px] px-3 py-3 rounded-md bg-white fixed top-[81px] z-20 overflow-x-hidden"></nav>
     </div>
 </header>
 
@@ -151,7 +151,7 @@
                     <input data-id="<?php echo $categoria['id']; ?>" type="checkbox" class="absolute w-[100%] h-[100%] opacity-0 cursor-pointer">
                 </a>
                 <!-- Contenido del dropdown -->
-                <ul class="h-[0px] overflow-hidden bg-gray-200 text-sm flex flex-col transicionColor"></ul>
+                <ul class="dropdown h-[0px] overflow-hidden bg-gray-200 text-sm flex flex-col transicionColor"></ul>
             </li>
         <?php endforeach; ?>
     </ul>
@@ -195,6 +195,6 @@
     </ul>
 </navbar>
 
-<div class="closeSearchMovil hidden w-[40px] h-[40px] rounded-md bg-white flex justify-center items-center absolute top-[710px] left-[45%] z-40">
+<div class="closeSearchMovil hidden w-[40px] h-[40px] rounded-md bg-white flex justify-center items-center absolute top-[410px] left-[44%] z-10">
     <svg width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
 </div>

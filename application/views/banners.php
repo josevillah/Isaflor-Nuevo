@@ -1,31 +1,17 @@
-<!-- <article class="w-[100%] flex flex-row justify-center">
-    <div class="w-[90%] h-[100%] flex flex-col lg:flex-row justify-center gap-5 overflow-hidden">
-        <a href="#" class="w-[100%] lg:w-[48%] h-[400px] bg-gray-100 rounded-md overflow-hidden flex">
-            <img class="w-[100%] object-cover" src="<?php echo base_url("public/img/banner/ejemplo1.webp"); ?>">
-        </a>
-        <section class="w-[100%] lg:w-[48%] h-[800px] md:h-[400px] flex flex-col md:flex-row gap-5">
-            <div class="w-[100%] md:w-[48%] h-[100%] flex flex-row md:flex-col gap-5">
-                <a href="#" class="w-[50%] md:w-[100%] h-[100%] md:h-[48%] bg-gray-100 rounded-md overflow-hidden">
-                    <img class="w-[100%] h-[100%] object-cover" src="<?php echo base_url("public/img/banner/ejemplo2.webp"); ?>">
-                </a>
-                <a href="#" class="w-[50%] md:w-[100%] h-[100%] md:h-[48%] bg-gray-100 rounded-md overflow-hidden">
-                    <img class="w-[100%] h-[100%] object-cover" src="<?php echo base_url("public/img/banner/ejemplo3.webp"); ?>">
-                </a>
-            </div>
-            <a href="#" class="w-[100%] md:w-[48%] h-[100%] bg-gray-100 rounded-md overflow-hidden">
-                <img class="w-[100%] h-[100%] object-cover" src="<?php echo base_url("public/img/banner/ejemplo4.webp"); ?>">
-            </a>
-        </section>
+<section class="w-full relative">
+    <div class="slider w-full flex items-center transicionSlider">
+        <img class="aspect-video md:aspect-auto object-cover" src="<?php echo base_url("public/img/banner/1.webp"); ?>" alt="">
+        <img class="aspect-video md:aspect-auto object-cover" src="<?php echo base_url("public/img/banner/2.webp"); ?>" alt="">
+        <img class="aspect-video md:aspect-auto object-cover" src="<?php echo base_url("public/img/banner/3.webp"); ?>" alt="">
+        <img class="aspect-video md:aspect-auto object-cover" src="<?php echo base_url("public/img/banner/4.webp"); ?>" alt="">
+        <img class="aspect-video md:aspect-auto object-cover" src="<?php echo base_url("public/img/banner/5.webp"); ?>" alt="">
     </div>
-</article> -->
-
-<article class="w-[100%] flex flex-row justify-center">
-    <div class="w-[90%] h-[100%] flex flex-col lg:flex-row justify-center gap-5 overflow-hidden">
-        <a href="<?php echo base_url("index.php/categorias/viewCategoria/39?page=1"); ?>" class="w-[100%] lg:w-[48%] max-h-[500px] bg-gray-100 rounded-md overflow-hidden flex">
-            <img class="w-[100%] object-contain" src="<?php echo base_url("public/img/banner/1.webp"); ?>">
+    <div class="sliderButtons w-full flex justify-between absolute top-[50%] px-5">
+        <a href="" class="bg-gray-700 hover:bg-orange-400 text-white rounded-full transicionColor outline-0">
+            <svg class="slideLeft" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
         </a>
-        <a href="<?php echo base_url("index.php/categorias/viewCategoria/25?page=1"); ?>" class="w-[100%] lg:w-[48%] max-h-[500px] bg-gray-100 rounded-md overflow-hidden flex">
-            <img class="w-[100%] object-contain" src="<?php echo base_url("public/img/banner/2.webp"); ?>">
+        <a href="" class="bg-gray-700 hover:bg-orange-400 text-white rounded-full transicionColor outline-0">
+            <svg class="slideRight" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
         </a>
     </div>
-</article>
+</section>

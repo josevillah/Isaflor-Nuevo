@@ -6,6 +6,11 @@
     transition: all 0.5s ease;
 }
 
+
+.transicionSlider{
+    transition: all 0.5s ease-in;
+}
+
 .categoriasHover img{
     transition: transform 0.5s ease;
 }
@@ -37,12 +42,18 @@
 body{
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
-    max-width: 1550px;
+    /* max-width: 1550px; */
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     /* También puedes ajustar otros estilos de encabezado según tus preferencias */
+}
+
+.climateBody {
+    overflow: hidden; /* Para ocultar el contenido que excede la altura */
+    height: 0; /* Establecer la altura inicial en 0 */
+    transition: height 1s ease; /* Animación de la altura durante 1 segundo */
 }
 
 /* Estilo para el scrollbar principal */
